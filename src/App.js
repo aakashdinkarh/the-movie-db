@@ -13,7 +13,7 @@ import Movie from "./Components/Movie";
 import NotFound from "./Components/NotFound";
 
 const App = () => (
-  <BrowserRouter>
+  <BrowserRouter basename={process.env.PUBLIC_URL}>
     <Header />
     <Routes>
       <Route path="/" element={<Home />} />
