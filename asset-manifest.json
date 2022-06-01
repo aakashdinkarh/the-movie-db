@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.js": "/TheMovieDB/static/js/main.fbdb53bf.js",
-    "static/media/no_image.jpg": "/TheMovieDB/static/media/no_image.22d2aa4d1af1a092666a.jpg",
-    "static/media/react-movie-logo.svg": "/TheMovieDB/static/media/react-movie-logo.42955eb6fcd32d2d228d0634c7cb7804.svg",
-    "static/media/tmdb_logo.svg": "/TheMovieDB/static/media/tmdb_logo.f15b66321d9915689a58f8372fa02398.svg",
-    "index.html": "/TheMovieDB/index.html",
-    "static/media/search-icon.svg": "/TheMovieDB/static/media/search-icon.cd820f5a55f7cd57d7131f1672d43473.svg",
-    "main.fbdb53bf.js.map": "/TheMovieDB/static/js/main.fbdb53bf.js.map"
+    "main.js": "/the-movie-db/static/js/main.b27bed4c.js",
+    "static/media/no_image.jpg": "/the-movie-db/static/media/no_image.22d2aa4d1af1a092666a.jpg",
+    "static/media/react-movie-logo.svg": "/the-movie-db/static/media/react-movie-logo.42955eb6fcd32d2d228d0634c7cb7804.svg",
+    "static/media/tmdb_logo.svg": "/the-movie-db/static/media/tmdb_logo.f15b66321d9915689a58f8372fa02398.svg",
+    "index.html": "/the-movie-db/index.html",
+    "static/media/search-icon.svg": "/the-movie-db/static/media/search-icon.cd820f5a55f7cd57d7131f1672d43473.svg",
+    "main.b27bed4c.js.map": "/the-movie-db/static/js/main.b27bed4c.js.map"
   },
   "entrypoints": [
-    "static/js/main.fbdb53bf.js"
+    "static/js/main.b27bed4c.js"
   ]
 }
