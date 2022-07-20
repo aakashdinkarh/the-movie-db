@@ -29,3 +29,16 @@ export const Content = styled.div`
     text-decoration: none;
   }
 `;
+
+export const FavBar = styled.div`
+  display: flex;
+  font-weight: bold;
+  font-size: var(--fontMed);
+  padding: 10px 20px 0 0;
+  justify-content: flex-end;
+
+  a {
+    color: black;
+    text-decoration: none;
+  }
+`;

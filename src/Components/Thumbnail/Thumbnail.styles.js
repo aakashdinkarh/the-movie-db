@@ -1,5 +1,16 @@
 import styled from "styled-components";
 
+export const ThumbnailContainer = styled.div`
+  position: relative;
+  overflow: hidden;
+
+  :hover {
+    button {
+      transform: translate(0);
+    }
+  }
+`;
+
 export const Image = styled.img`
   width: 100%;
   max-width: 720px;

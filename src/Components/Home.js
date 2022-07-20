@@ -1,4 +1,4 @@
-import React from "react";
+import { Link } from "react-router-dom";
 //config
 import { POSTER_SIZE, BACKDROP_SIZE, IMAGE_BASE_URL } from "../config";
 //components
@@ -8,7 +8,8 @@ import Thumbnail from "./Thumbnail/Thumbnail";
 import Spinner from "./Spinner/Spinner";
 import SearchBar from "./SearchBar/SearchBar";
 import Button from "./Button/Button";
-
+//styles
+import { FavBar } from "./BreadCrumb/BreadCrumb.styles";
 //Hook
 import { useHomeFetch } from "../hooks/useHomeFetch";
 //Image
@@ -32,6 +33,10 @@ const Home = () => {
         />
       )}
       <SearchBar setSearchTerm={setSearchTerm} />
+      <FavBar>
+        <Link to="favMovies">Go to Favorites</Link>
+      </FavBar>
+
       <Grid
         header={
           searchTerm ? `Search results for "${searchTerm}"` : "Popular Movies"

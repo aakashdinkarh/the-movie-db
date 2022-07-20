@@ -5,14 +5,14 @@ import PropTypes from "prop-types";
 //Styles
 import { Wrapper, Content } from "./BreadCrumb.styles";
 
-const BreadCrumb = (props) => (
+const BreadCrumb = ({ movieTitle }) => (
   <Wrapper>
     <Content>
       <Link to="/">
         <span>Home</span>
       </Link>
       <span>|</span>
-      <span>{props.movieTitle}</span>
+      <span>{movieTitle}</span>
     </Content>
   </Wrapper>
 );
