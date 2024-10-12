@@ -1,24 +1,14 @@
-import React, { useState, useEffect, useRef } from "react";
-import PropTypes from "prop-types";
-
-//Image
+import React, { useState, useEffect, useRef, Dispatch, SetStateAction } from "react";
 import searchIcon from "../../images/search-icon.svg";
-
-//Styles
 import { Wrapper, Content } from "./SearchBar.styles";
 
-const SearchBar = ({ setSearchTerm }) => {
+type TSearchBar = {
+  setSearchTerm: Dispatch<SetStateAction<string>>;
+}
+
+const SearchBar = ({ setSearchTerm }: TSearchBar) => {
   const [state, setState] = useState("");
   const initial = useRef(true);
-
-  // useEffect(() => {
-  //   const timer = setTimeout(() => {
-  //     setSearchTerm(state);
-  //   }, 500);
-  //   return () => {
-  //     clearTimeout(timer);
-  //   };
-  // }, [state, setSearchTerm]);
 
   useEffect(() => {
     if (initial.current) {
@@ -45,10 +35,6 @@ const SearchBar = ({ setSearchTerm }) => {
       </Content>
     </Wrapper>
   );
-};
-
-SearchBar.propTypes = {
-  setSearchTerm: PropTypes.func,
 };
 
 export default SearchBar;

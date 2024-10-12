@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { persistedState } from "../helpers";
-//API
 import API from "../API";
+import { TListMovieDetails } from "./homeFetchTypes";
 
-const initialState = {
+const initialState: TListMovieDetails = {
   page: 0,
   results: [],
   total_pages: 0,
@@ -22,12 +22,11 @@ export const useHomeFetch = () => {
     if (!searchTerm) {
       const sessionState = persistedState("homeState");
       if (sessionState) {
-        // console.log("fetching from session storage");
         setState(sessionState);
         return;
       }
     }
-    // console.log("fetching from API");
+
     setState(initialState);
     fetchMovies(1, searchTerm);
   }, [searchTerm]);
@@ -52,12 +51,12 @@ export const useHomeFetch = () => {
       sessionStorage.setItem("homeState", JSON.stringify(state));
   }, [searchTerm, state]);
 
-  const fetchMovies = async (page, searchTerm = "") => {
+  const fetchMovies = async (page: number, searchTerm = "") => {
     try {
       setError(false);
       setLoading(true);
 
-      const movies = await API.fetchMovies(searchTerm, page);
+      const movies: TListMovieDetails = await API.fetchMovies(searchTerm, page);
 
       setState((prev) => ({
         ...movies,

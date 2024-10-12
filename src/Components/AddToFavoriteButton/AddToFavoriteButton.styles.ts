@@ -24,7 +24,7 @@ export const FavoriteButton = styled.button`
     height: 10px;
     border-radius: 20px 0px 0px 20px;
     transform: rotate(45deg);
-    background-color: ${({ IsFavorite }) =>
+    background-color: ${({ IsFavorite }: { IsFavorite: boolean }) =>
       IsFavorite ? "rgba(255 0 0)" : "#9e9e9e"};
   }
   ::after {

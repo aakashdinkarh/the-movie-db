@@ -1,25 +1,19 @@
+import React from 'react';
 import { Link } from "react-router-dom";
-//config
 import { POSTER_SIZE, BACKDROP_SIZE, IMAGE_BASE_URL } from "../config";
-//components
 import HeroImage from "./HeroImage/HeroImage";
 import Grid from "./Grid/Grid";
 import Thumbnail from "./Thumbnail/Thumbnail";
 import Spinner from "./Spinner/Spinner";
 import SearchBar from "./SearchBar/SearchBar";
 import Button from "./Button/Button";
-//styles
 import { FavBar } from "./BreadCrumb/BreadCrumb.styles";
-//Hook
 import { useHomeFetch } from "../hooks/useHomeFetch";
-//Image
 import NoImage from "../images/no_image.jpg";
 
 const Home = () => {
   const { state, loading, error, searchTerm, setSearchTerm, setIsLoadingMore } =
     useHomeFetch();
-
-  // console.log("home render", state, loading, "");
 
   if (error) return <div>Something went wrong...</div>;
 
