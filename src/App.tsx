@@ -7,7 +7,7 @@ import Movie from "./Components/Movie";
 import NotFound from "./Components/NotFound";
 import FavoriteMovies from "./Components/FavoriteMovies";
 import { cleanupExpiredCache, ONE_HOUR_IN_MS } from "./utils/indexedDBUtils";
-import { getLastIndexedDBCacheCleanUp } from "./utils/localStorageUtils";
+import { getLastIndexedDBCacheCleanUp, saveLastIndexedDBCacheCleanUp } from "./utils/localStorageUtils";
 
 const App = () => {
   useEffect(() => {
@@ -16,6 +16,7 @@ const App = () => {
       const now  = new Date();
 
       if (now.getTime() - lastCacheClean.getTime() > ONE_HOUR_IN_MS) {
+        saveLastIndexedDBCacheCleanUp(now);
         cleanupExpiredCache();
       }
     }, 0);
