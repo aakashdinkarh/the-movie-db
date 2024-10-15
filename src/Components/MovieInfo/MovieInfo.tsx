@@ -1,13 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import Thumbnail from "../Thumbnail/Thumbnail";
-import { IMAGE_BASE_URL, POSTER_SIZE } from "../../config";
+import { BACKDROP_SIZE, IMAGE_BASE_URL, POSTER_SIZE } from "../../config";
 import { Wrapper, Content, Text } from "./MovieInfo.styles";
 import NoImage from "../../images/no_image.jpg";
 import { TMovieState } from "../../hooks/movieFetchTypes";
+import { convertToWebP } from "../../utils/toWebpImage";
 
 const MovieInfo = ({ movie }: { movie: TMovieState }) => {
+  const [webpBackdrop, setWebpBackdrop] = useState('');
+  if (webpBackdrop === '') {
+    (async () => {
+      const backdropPath = `${IMAGE_BASE_URL}${BACKDROP_SIZE}${movie.backdrop_path}`;
+
+      const convertedUrl = await convertToWebP(backdropPath);
+      setWebpBackdrop(convertedUrl);
+    })();
+  }
+
   return (
-    <Wrapper backdrop_path={movie.backdrop_path}>
+    <Wrapper backdropImage={webpBackdrop}>
       <Content>
         <Thumbnail
           src={
